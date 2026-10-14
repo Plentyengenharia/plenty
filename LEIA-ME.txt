@@ -1,0 +1,50 @@
+PLENTY ENGENHARIA — Gestão de Vistorias (PHP + MySQL)
+
+Sistema com módulos organizados, banco MySQL alimentado pela API e acesso
+restrito (HTML/JS da aplicação não são públicos).
+
+CENTRAL DE MÓDULOS (após o login)
+- Home com gradiente na paleta da logo e atalhos em retângulos discretos
+- Vistorias (ativo): abre o sistema já existente
+- Reservados para expansão: Obras, Engenharia, Pedidos, Compras, Financeiro,
+  Administrativo, Qualidade, Pessoas, Planejamento
+
+DENTRO DE VISTORIAS
+- Visão geral, Demandas e visitas, Nova vistoria, Relatórios
+- Equipe (distribuição de demandas)
+- Cadastros (obras e responsáveis do escritório — não criam login)
+- Funcionários (cadastro completo: nome, e-mail, telefone, cargo, depto, documento)
+- Acessos (aprovar/recusar, ativar/desativar, editar e-mails — só administrador)
+- Botão/logo “Módulos” no menu volta à central
+
+SEGURANÇA
+- Entrada única: index.php (login ou app conforme sessão)
+- private/ bloqueada; app.js e ui.html só via asset.php / index.php com sessão
+- index.html e app.js na raiz ficam bloqueados pelo .htaccess
+- Cookies HttpOnly + SameSite=Strict; CSRF em POST; rate limit no login
+- Cabeçalhos: X-Frame-Options, nosniff, Referrer-Policy, CSP, X-Robots-Tag
+- Contas novas ficam pending até o admin autorizar
+
+INSTALAÇÃO NA HOSTINGER
+1. Use PHP 8.2+, PDO/pdo_mysql e HTTPS.
+2. No phpMyAdmin do banco u608130383_Plenty, importe private/schema.sql.
+3. Extraia o ZIP na raiz do public_html (index.php, api.php, asset.php, private/).
+4. Edite private/config.php e substitua PREENCHA_A_SENHA_DO_BANCO pela senha MySQL.
+5. Copie o valor de setup_key e abra o site (index.php) para criar o administrador.
+6. Em Funcionários / Acessos, cadastre a equipe e autorize os logins.
+
+ANTES DE SUBSTITUIR
+1. Guarde uma cópia dos arquivos atuais do site.
+2. Se já cadastrou vistorias na versão antiga, baixe o backup JSON em Relatórios.
+
+TESTE LOCAL (sem Hostinger)
+  node mock-server.mjs
+  Abra http://127.0.0.1:8787
+  Login demo: admin@plenty.local / plentyadmin1
+
+BANCO DE DADOS
+- plenty_users — funcionários e acessos
+- plenty_obras / plenty_responsaveis — cadastros prévios
+- plenty_visits — vistorias
+- plenty_state — revisão de concorrência
+- plenty_audit / plenty_rate_limits — auditoria e proteção
