@@ -1,0 +1,23 @@
+{
+  "name": "Plenty Engenharia",
+  "short_name": "Plenty",
+  "description": "Central de módulos Plenty Engenharia",
+  "start_url": "./index.php",
+  "display": "standalone",
+  "background_color": "#171b27",
+  "theme_color": "#171b27",
+  "icons": [
+    {
+      "src": "asset.php?f=apple-touch-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "asset.php?f=apple-touch-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

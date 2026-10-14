@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#171b27">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Plenty">
+<meta name="application-name" content="Plenty">
+<title>Plenty Engenharia | Acesso</title>
+<link rel="icon" type="image/png" sizes="180x180" href="asset.php?f=apple-touch-icon.png">
+<link rel="apple-touch-icon" href="asset.php?f=apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="asset.php?f=apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="asset.php?f=apple-touch-icon-192.png">
+<link rel="icon" type="image/svg+xml" href="asset.php?f=icon.svg">
+<link rel="manifest" href="asset.php?f=site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#171b27;--blue:#9a6b3f;--bg:#f6f4f0;--text:#29251f;--muted:#827b70;--line:#e8e0d5;
+  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:#f6f4f0;font-family:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;color:var(--text);padding-top:var(--safe-t)}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}
+h1,h2{font-family:Manrope,"Source Sans 3",sans-serif}
+.btn{padding:10px 15px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--text);font-weight:700;font-size:13px}
+.primary{background:linear-gradient(135deg,#aa7849,#80542f);border-color:#95643a;color:#fff;box-shadow:0 7px 17px #80542f38}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:12px;font-weight:800;color:#514a41}
+.field input{border:1px solid #ded6ca;border-radius:10px;padding:13px 14px;background:#fffdf9;color:var(--text);width:100%;outline:0}
+.field input:focus{border-color:#9a6b3f;box-shadow:0 0 0 3px #9a6b3f1a}
+.auth-screen{min-height:100vh;min-height:100dvh;display:grid;grid-template-columns:1fr 1fr}
+.auth-intro{background:#171b27;color:#fff;padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.auth-logo{width:min(280px,70%);height:auto;display:block;border-radius:12px}
+.auth-intro h2{font-size:clamp(30px,3.4vw,50px);line-height:1.12;letter-spacing:-.04em;max-width:520px;margin:48px 0 20px}
+.auth-intro p{color:#c0c3ce;line-height:1.8;max-width:390px;font-size:15px}
+.auth-caption{font-size:11px;color:#c49a68;letter-spacing:.14em;margin-top:48px;font-weight:700}
+.auth-main{display:flex;align-items:center;justify-content:center;padding:42px 25px}
+.auth-card{width:100%;max-width:420px}
+.auth-eyebrow{color:#95643a;font-size:11px;font-weight:800;letter-spacing:.14em}
+.auth-card h1{font-size:32px;letter-spacing:-.035em;margin:14px 0 10px}
+.auth-subtitle{color:#827b70;font-size:14px;line-height:1.6;margin:0 0 28px}
+.auth-card .field{margin-bottom:14px}
+.auth-password{position:relative}
+.auth-password input{padding-right:80px}
+.auth-eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:transparent;color:#80542f;font-size:11px;padding:8px;font-weight:700}
+.auth-submit{width:100%;padding:14px;font-size:14px;margin-top:4px}
+.auth-switch{text-align:center;font-size:13px;color:#827b70;margin-top:24px}
+.auth-link{background:transparent;color:#80542f;font-weight:800;padding:7px}
+.auth-note{font-size:11px;line-height:1.65;color:#827b70;border-top:1px solid #e0d9cf;margin-top:28px;padding-top:18px}
+.auth-message{padding:12px;border-radius:9px;background:#ffebeb;color:#9c303c;font-size:13px;line-height:1.5;margin-bottom:18px}
+.auth-message.success{background:#e3f8ef;color:#126247}
+.auth-help{font-size:11px;color:#827b70}
+.auth-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.auth-card button:focus-visible{outline:3px solid #c49a68;outline-offset:3px}
+.auth-card button:disabled{opacity:.6;cursor:wait}
+[hidden]{display:none!important}
+@media(max-width:850px){
+  .auth-screen{grid-template-columns:1fr}
+  .auth-intro{padding:28px 24px;min-height:auto;gap:18px}
+  .auth-intro h2,.auth-intro p{display:none}
+  .auth-logo{width:min(220px,62%);margin:0 auto}
+  .auth-caption{margin:8px 0 0;text-align:center}
+  .auth-main{padding:28px 20px calc(28px + var(--safe-b))}
+  .auth-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<section class="auth-screen" aria-label="Acesso à Plenty Engenharia">
+  <aside class="auth-intro">
+    <img class="auth-logo" src="asset.php?f=plenty-logo.jpg" alt="Plenty Engenharia">
+    <div>
+      <h2>Cada detalhe.<br>Uma gestão melhor.</h2>
+      <p>Organize vistorias, acompanhe demandas e mantenha suas obras em dia.</p>
+    </div>
+    <div class="auth-caption">ACESSO RESTRITO À EQUIPE</div>
+  </aside>
+  <main class="auth-main"><div class="auth-card">
+    <div class="auth-eyebrow">BEM-VINDO À PLENTY</div>
+    <h1 id="authTitle">Acesse sua conta</h1>
+    <p class="auth-subtitle" id="authSubtitle">Entre para acompanhar suas vistorias e demandas.</p>
+    <div id="authMessage" class="auth-message" role="status" aria-live="polite" hidden></div>
+    <form id="authForm">
+      <div class="field" id="setupField" hidden>
+        <label for="setupKey">Chave de instalação</label>
+        <input id="setupKey" type="password" autocomplete="off" disabled>
+        <span class="auth-help">Primeiro acesso: use a chave setup_key do arquivo private/config.php.</span>
+      </div>
+      <div class="field" id="authNameField" hidden>
+        <label for="authName">Nome completo</label>
+        <input id="authName" autocomplete="name" maxlength="100" disabled>
+      </div>
+      <div class="auth-grid" id="authExtraFields" hidden>
+        <div class="field">
+          <label for="authPhone">Telefone</label>
+          <input id="authPhone" type="tel" autocomplete="tel" maxlength="40" disabled>
+        </div>
+        <div class="field">
+          <label for="authCargo">Cargo</label>
+          <input id="authCargo" maxlength="100" disabled>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label for="authDepartamento">Departamento</label>
+          <input id="authDepartamento" maxlength="100" disabled>
+        </div>
+      </div>
+      <div class="field">
+        <label for="authEmail">E-mail</label>
+        <input id="authEmail" type="email" autocomplete="username" placeholder="voce@empresa.com.br" maxlength="254" required>
+      </div>
+      <div class="field">
+        <label for="authPassword">Senha</label>
+        <div class="auth-password">
+          <input id="authPassword" type="password" autocomplete="current-password" maxlength="128" required>
+          <button class="auth-eye" type="button" id="togglePassword" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button>
+        </div>
+        <span class="auth-help" id="authPasswordHelp" hidden>Use pelo menos 10 caracteres (até 72 bytes).</span>
+      </div>
+      <div class="field" id="authConfirmField" hidden>
+        <label for="authConfirm">Confirmar senha</label>
+        <input id="authConfirm" type="password" autocomplete="new-password" maxlength="128" disabled>
+      </div>
+      <button type="submit" class="btn primary auth-submit" id="authSubmit">Entrar</button>
+    </form>
+    <div class="auth-switch">
+      <span id="authSwitchText">Ainda não tem uma conta?</span>
+      <button type="button" class="auth-link" id="authSwitch">Cadastre-se</button>
+    </div>
+    <p class="auth-note">Acesso exclusivo da equipe Plenty Engenharia. Novos cadastros ficam pendentes até o administrador autorizar. Dados e telas do sistema não são públicos.</p>
+  </div></main>
+</section>
+<script src="asset.php?f=auth.js" defer></script>
+</body>
+</html>
